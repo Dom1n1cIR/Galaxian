@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galaxy Quest</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  		<style>
+			#starfield {
+				z-index: -2;
+			}
+			#loading {
+				z-index: 1;
+			}
+			#main {
+				z-index: -1;
+			}
+			#ship {
+				z-index: 0;
+			}
+		</style>
+</head>
+<body class="container">
+<div class= "GameTitle">
+	<H1>Galaxy Quest</H1>
+</div>
+<div class="game">
+    <div class="info">
+      <div class="level">Level <span id="level">1</span></div>
+      <div class="audioMuter" onclick="mute()">Music is now <span id="musicMuter">On</span></div>
+      <div class="score">Score <span id="score"></span></div>
+    </div>
+    <div id="loading">
+    	<div class="content">
+	    	<p>Click Here To Start!</p>
+	    	<p>Control the spaceship with <code>arrow keys</code>, shoot with <code>space.</code></p>
+	    	<p>Hit <code>M</code> to mute the music.</p>
+	  		<p>You have three chances Good Luck!!!</p>
+  		</div>
+	</div>
+<!--Use multiple Canvas elements superimposed on top of one another to give game performance a significant boost.-->
+    <div class="canvas">
+      <canvas id="starfield" width="360" height="480">
+        Whoops, looks like your browser does not support some thing this game need.
+      </canvas>
+     <!-- The canvas for all enemy ships and bullets -->
+      <canvas id="main" width="360" height="480">
+      </canvas>
+      <!-- The canvas the player uses -->
+      <canvas id="ship" width="360" height="480">
+      </canvas>
+      <div class="game-over" id="game-over">Game Over!
+        <p><div class="restartBtn" onclick="game.restart()">Try again!</div></p>
+        <p class="small">(hit R to restart)</p>
+      </div>
+      <div id="level-up">
+        Level up!
+      </div>
+    </div>
+    <div id="lives">
+      <img src="img/live.png" alt="" />
+      <img src="img/live.png" alt="" />
+      <img src="img/live.png" alt="" />
+    </div>
+</div>
+  <script src="js/game.js"></script>
+	</body>
+</html>
